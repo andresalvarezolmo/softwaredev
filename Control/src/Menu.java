@@ -19,12 +19,15 @@ public class Menu {
 			Choice.TableValues();
 		}	
 		else if (userChoice.equals("3")) {
-			Choice.Choice4();
+			Choice.InputStatistics();
 		}
 		else if (userChoice.equals("4")) {
 			Choice.Choice4();
 		}	
-		
+		else if (userChoice.equals("5")) {
+			Choice.exit();
+			break;
+		}
 		else {
 			System.out.println("Invalid value, enter a valid one");	
 		}
@@ -39,7 +42,7 @@ public class Menu {
 	System.out.println("Please select one of the options below by typing the number");
 	System.out.println("1. Option 1 | Get your grade");
 	System.out.println("2. Option 2 | Table values");
-	System.out.println("3. Option 3");
+	System.out.println("3. Option 3 | InputStatistics");
 	System.out.println("4. Option 4");
 	System.out.println("5. Exit");
 	}

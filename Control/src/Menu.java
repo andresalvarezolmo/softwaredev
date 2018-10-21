@@ -22,7 +22,7 @@ public class Menu {
 			Choice.InputStatistics();
 		}
 		else if (userChoice.equals("4")) {
-			Choice.Choice4();
+			Choice.seeYourMark();
 		}	
 		else if (userChoice.equals("5")) {
 			Choice.exit();

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Choice {
 
-	
+	//static double Grade;
 	public static void GetYourGrade (){
 		do {
 		System.out.println("Get your grade has been executed");
@@ -78,32 +78,84 @@ public class Choice {
 		
 	
 	public static  void InputStatistics (){
-		
+				
+		int a = 0, quant = 0, min = 0, max = 0, sum = 0;
+		float avg;
 		Scanner in = new Scanner(System.in);
-
-		int a=in.nextInt();
-		int b=in.nextInt();
-		int c=in.nextInt();
-		int d=in.nextInt();
+		System.out.println("Enter the first bound");
+		a = in.nextInt();
 		
-		while (a!=-1 && b!=-1 && c!=-1 && d!=-1);
-		System.out.println("InputStatistics executed");
-		System.out.println("Please, enter the first bound :");
-		a=in.nextInt();
-		System.out.println("Please, enter the second bound :");
-		b=in.nextInt();
-		System.out.println("Please, enter the third bound :");
-		c=in.nextInt();
-		System.out.println("Please, enter the forth bound :");
-		d=in.nextInt();
-
+		quant++;
+		min=max=sum=a;
+		avg=sum/quant;
 		
-	}
+		if (a!=-1) {
+		System.out.println("Num: " + a);
+		System.out.println("Min: " + a);
+		System.out.println("Max: " + a);
+		System.out.println("Average: " + avg);
+		System.out.println("Quantity: " + quant);
+		System.out.println("Total: " + a);
+		}
+		
+		else {
+			System.out.println("You came back to the menu");
+		}
+		
+		while(a!=-1) {
+				
+				System.out.println();
+				System.out.println("Enter another bound (enter '-1' to go to the menu again):");
+				a = in.nextInt();
+				
+				if (a!=-1) {
+					
+				quant++;
+				sum+=a;
+				avg=sum/quant;
+				
+				if(a>max) {
+				max=a;
+				}
+				
+				if (a<min) {
+				min=a;
+				}
+			
+				System.out.println("Num: " + a);
+				System.out.println("Min: " + min);
+				System.out.println("Max: " + max);
+				System.out.println("Total: " + sum);	
+				System.out.println("Average: " + avg);
+				System.out.println("Quantity: " + quant);
 	
-	public static void Choice4 (){
+				} 
+				else {
+					System.out.println("You came back to the menu");
+				}
+		}	
+	}
+			
+	
+	public static void seeYourMark (){
 		
-		System.out.println("Choice 4 executed");
+		System.out.println("See your mark has been executed");
+		System.out.println("Please, enter your mark in percentage (enter -1 to go back to the menu):");
+		Scanner in = new Scanner(System.in);
+	    double Grade = in.nextDouble();
 		
+	    do {
+	    	if (0<Grade && Grade<100){
+				Choice.GetYourGrade();
+	    	}
+	    	
+	    	
+	    	else {
+	    		break;
+	    	}
+	    	
+	    }
+	    while (Grade!=-1);
 	}
 	
 	public static void exit ()
